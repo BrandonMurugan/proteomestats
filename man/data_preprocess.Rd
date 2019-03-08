@@ -2,23 +2,28 @@
 % Please edit documentation in R/data_preprocess.R
 \name{data_preprocess}
 \alias{data_preprocess}
-\title{Hello, world!}
+\title{Imports and preprocesses data files for label-free proteomic LC-MS experiments}
 \usage{
-data_preprocess(txtfolder = txtpath, mqparPath = mqpath,
-  Quantitation = QuantType)
+data_preprocess(txtpath, mqparfile, quant_type = "Intensity",
+  norm_type = "MedianCentre", valid_values = 3, imputation = F)
+}
+\arguments{
+\item{txtpath}{MaxQuant txt folder}
+
+\item{quant_type}{Quanitiation type to select. Possible choices are "Intensity" (default), or "LFQ".}
+
+\item{norm_type}{Type of normalisation to perform. Possible choices are "MedianCentre" (default), "Quantile", or "None".}
+
+\item{valid_values}{Numeric. Removes entire protein if number of valid (non-zero) values are less than stated amount for \bold{any} group}
+
+\item{imputation}{Logical. If \code{TRUE}, will impute with lowest value of all intensities found in dataset. Default is FALSE}
+
+\item{mqparPath}{MaxQuant mqpar.xml file path}
 }
 \description{
-This is an example function named 'hello'
-which prints 'Hello, world!'.
+This function imports MaxQuant proteingroups.txt, peptides.txt, Phospho (STY)Sites.txt (if it exists), and mqpar.xml files.
+Proteingroups.txt file is then filtered and normalised according to chosen quantitation and normlisation types
 }
-\details{
-You can learn more about package authoring with RStudio at:
-
-http://r-pkgs.had.co.nz/
-
-Some useful keyboard shortcuts for package authoring:
-
-Build and Reload Package:  'Ctrl + Shift + B'
-  Check Package:             'Ctrl + Shift + E'
-  Test Package:              'Ctrl + Shift + T'
+\author{
+Brandon D. Murugan
 }
