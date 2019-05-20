@@ -17,7 +17,7 @@
 # valid.values <- 2
 # experimental.groups <- experiments2$experiments
 
-data_preprocess <- function(input.df, experimental.groups, valid.values = 2, zero.as.na=T){
+filter_valid_values <- function(input.df, experimental.groups, valid.values = 2, zero.as.na=T){
 
   require(dplyr)
   require(splitstackshape)
