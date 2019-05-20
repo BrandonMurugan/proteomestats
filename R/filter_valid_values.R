@@ -24,7 +24,6 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
   require(here)
   require("miscTools")
   require(preprocessCore)
-  require(XML)
   require(dplyr)
   require(reshape2)
   require(tidyr)

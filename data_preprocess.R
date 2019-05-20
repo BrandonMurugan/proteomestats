@@ -126,9 +126,12 @@ data_preprocess <- function(txtpath, mqparfile, quant_type = "Intensity", norm_t
   # # VALID VALUE HANDLING
   #   ProteinQuant.norm <- ProteinQuant.norm[complete.cases(ProteinQuant.norm) ,]
 
-  # IMPUTATION 9IN PROGRESS
-  for (i in colnames(ProteinQuant.norm[,-1])){
-    ProteinQuant.norm[is.na(ProteinQuant.norm),i] <- min(ProteinQuant.norm[,i], na.rm = T)}
+  # IMPUTATION IN PROGRESS
+  if (imputation == T){
+    for (i in colnames(ProteinQuant.norm[,-1])){
+      ProteinQuant.norm[,i] <- tidyr::replace_na(ProteinQuant.norm[,i], min(ProteinQuant.norm[,i], na.rm = T))
+    }
+    }
 
 
 
