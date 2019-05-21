@@ -14,7 +14,6 @@
 #' @author Brandon D. Murugan
 
 # input.df <- test
-# input.df <- ProteinQuant.norm_2[1:10,]
 # valid.values <- 2
 # experimental.groups <- experiments2$experiments
 
@@ -40,7 +39,7 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
     colnames(temporary) <- "NA"
     for (j in experimental.groups){
       # if ((sum(input.df[i,grep(pattern = j, x = colnames(input.df))] != 0) > (valid.values-1))) {
-      if (sum(is.na(input.df[i,grep(pattern = j, x = colnames(input.df))])) <= (length(input.df[i,grep(pattern = j, x = colnames(input.df))]) - valid.values)) {
+      if (sum(is.na(test[i,grep(pattern = j, x = colnames(test))])) <= (length(test[i,grep(pattern = j, x = colnames(test))]) - valid.values)) {
         temporary <- cbind(temporary,input.df[i,grep(pattern = j, x = colnames(input.df))])}
     }
     if (dim(temporary)[2] == dim(input.df)[2]){
@@ -55,15 +54,15 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
   test2 <- test2[-1,]
   test3 <- test2
 # removes rows where there are ALL NAs
-  # for (i in rownames(test2)){
-  #   currentrow <- as.numeric(i)
-  #   if (sum(is.na(test2[currentrow,-1])) == (dim(input.df)[2]-1)){
-  #     test2 <- test2[-currentrow,]
-  #   }
-  # }
+  for (i in rownames(test2)){
+    currentrow <- as.numeric(i)
+    if (sum(is.na(test2[currentrow,-1])) == (dim(input.df)[2]-1)){
+      test2 <- test2[-currentrow,]
+    }
+  }
 
   if (zero.as.na == F){
-    test2[is.na(test2)] <- 0
+    test2[test2==NA] <- 0
   }
 return(test2)
 }
