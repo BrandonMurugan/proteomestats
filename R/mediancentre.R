@@ -16,7 +16,6 @@
 mediancentre <- function(x = ProteinQuant){
   library(dplyr)
   library(splitstackshape)
-  library(here)
   library("miscTools")
   library(preprocessCore)
   ProteinQuant[ProteinQuant == 0] <- NA
