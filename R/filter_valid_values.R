@@ -19,14 +19,12 @@
 # experimental.groups <- experiments2$experiments
 
 filter_valid_values <- function(input.df, experimental.groups, valid.values = 2, zero.as.na=T){
-  require(dplyr)
-  require(splitstackshape)
-  require(here)
-  require("miscTools")
-  require(preprocessCore)
-  require(dplyr)
-  require(reshape2)
-  require(tidyr)
+  require(dplyr, quietly = T)
+  require("miscTools", quietly = T)
+  require(preprocessCore, quietly = T)
+  require(dplyr, quietly = T)
+  require(reshape2, quietly = T)
+  require(tidyr, quietly = T)
 
   input.df[input.df==0] <- NA
   temporary <- data.frame(NA)
