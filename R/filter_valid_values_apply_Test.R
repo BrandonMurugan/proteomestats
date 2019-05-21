@@ -14,15 +14,17 @@
 #' @author Brandon D. Murugan
 
 # input.df <- test
-# input.df <- ProteinQuant.norm_2[1:10,]
+input.df <- ProteinQuant.norm_2[1:10,]
 # valid.values <- 2
 # experimental.groups <- experiments2$experiments
 
 filter_valid_values <- function(input.df, experimental.groups, valid.values = 2, zero.as.na=T){
-
   require(dplyr)
+  require(splitstackshape)
+  require(here)
   require("miscTools")
   require(preprocessCore)
+  require(dplyr)
   require(reshape2)
   require(tidyr)
 
@@ -31,8 +33,10 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
   colnames(temporary) <- "NA"
   test2 <- cbind(NA,input.df[1,])
   test2[1,] <- NA
+  test23 <- NULL
 
-  for (i in rownames(input.df)){
+  # for (i in rownames(input.df)){
+apply(input.df, 1, function(x){
     temporary <- data.frame(NA)
     colnames(temporary) <- "NA"
     for (j in experimental.groups){
@@ -46,7 +50,8 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
       temporary <- temporary[names(test2)]
       test2 <- rbind(test2,temporary)
     }
-  }
+    test23 <- test2
+  })
 
   test2[,"NA"] <- NULL
   test2 <- test2[-1,]
