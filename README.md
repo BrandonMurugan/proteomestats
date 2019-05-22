@@ -1,7 +1,7 @@
 # proteomestats
 Functions for statistical analysis of proteomic data in R
 
-##Installation
+### Installation
 ```
 devtools::install_github("BrandonMurugan/proteomestats")
 ```
