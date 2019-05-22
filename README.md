@@ -1,2 +1,2 @@
 # proteomestats
-Packages for statistical analysis of proteomic  data
+Functions for statistical analysis of proteomic  data
