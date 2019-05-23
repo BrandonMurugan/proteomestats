@@ -22,7 +22,6 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
 
   require(dplyr)
   require("miscTools")
-  require(preprocessCore)
   require(reshape2)
   require(tidyr)
 
