@@ -5,10 +5,10 @@
 #' The output file is the input file with an additional \italic{user defined} ProteinID column (Default = \bold{ProteinID_main})
 #'
 #'
-#' @param input.df Input dataframe (e.g.: MaxQuant proteinGroups.txt file)
-#' @param ProteinID.column Protein ID column to be filtered through to find 1st instance of an \bold{sp} identifier
-#' @param delimiter Delimiter within \bold{ProteinID.column}
-#' @param new.ID.column Name of new ID column. Default is \bold{ProteinID_main}
+#' @param input.df Input dataframe (e.g.: MaxQuant proteinGroups.txt file) \italic{(environmental variable)}
+#' @param ProteinID.column Protein ID column to be filtered through to find 1st instance of an \bold{sp} identifier \italic{(string)}
+#' @param delimiter Delimiter within \bold{ProteinID.column} \italic{(string)}
+#' @param new.ID.column Name of new ID column. Default is \bold{ProteinID_main} \italic{(string)}
 #'
 #'
 #' @author Brandon D. Murugan
