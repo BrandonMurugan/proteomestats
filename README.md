@@ -1,5 +1,5 @@
 # proteomestats
-Functions for statistical analysis of proteomic data in R
+Utility functions for statistical analysis of proteomic data in R
 
 ### Installation
 ```
