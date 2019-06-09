@@ -29,9 +29,11 @@ sp.select <- function(input.df, ProteinID.column, new.ID.column = "ProteinID_mai
   sp_proteins <- sp_proteins[,1]
   # colnames(sp_proteins) <- "sp_proteins"
   names(sp_proteins) <- "sp_proteins"
+  sp_proteins <- data.frame(sp_proteins)
   sp_proteins$sp_proteins <- as.character(sp_proteins$sp_proteins)
   # colnames(sp_proteins) <- new.ID.column
   names(sp_proteins) <- new.ID.column
+  sp_proteins <- data.frame(sp_proteins)
   input.df <- cbind(sp_proteins, input.df, deparse.level = 1)
   input.df <- data.frame(input.df)
   return(input.df)
