@@ -24,7 +24,7 @@ sp.select <- function(input.df, ProteinID.column, new.ID.column = "ProteinID_mai
   library(dplyr)
   sp_proteins <- data.frame(sp_proteins=substring(input.df[,grep(paste0("^",ProteinID.column,"$"), colnames(input.df))],regexpr("sp\\|", input.df[,grep(paste0("^",ProteinID.column,"$"), colnames(input.df))])))
 
-  sp_proteins <- cSplit(indt = sp_proteins, splitCols = "sp_proteins", sep = delimiter)
+  sp_proteins <- data.frame(cSplit(indt = sp_proteins, splitCols = "sp_proteins", sep = delimiter))
   # sp_proteins <- sp_proteins[,1:grep("sp_proteins_01", colnames(sp_proteins))]
   sp_proteins <- sp_proteins[,1]
   # colnames(sp_proteins) <- "sp_proteins"
