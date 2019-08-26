@@ -13,7 +13,7 @@
 #'   Check Package:             'Ctrl + Shift + E'
 #'   Test Package:              'Ctrl + Shift + T'
 
-mediancentre <- function(x = ProteinQuant){
+mediancentre <- function(ProteinQuant){
   library(dplyr)
   library(splitstackshape)
   library("miscTools")
