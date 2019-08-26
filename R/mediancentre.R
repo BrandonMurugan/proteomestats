@@ -15,7 +15,7 @@ mediancentre <- function(x){
   library(splitstackshape)
   library("miscTools")
   library(preprocessCore)
-  X[x == 0] <- NA
+  x[x == 0] <- NA
   ProteinQuant.norm <- x[,-1]
   ColumnMedians <- colMedians(ProteinQuant.norm, na.rm = T)
   ColumnMedians <- as.data.frame(ColumnMedians)
