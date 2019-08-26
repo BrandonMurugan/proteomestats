@@ -1,17 +1,14 @@
-#' Hello, world!
+#' Mediancentre function
 #'
-#' This is an example function named 'hello'
-#' which prints 'Hello, world!'.
+#' This function reads in a dataframe with protein ID column as the 1st column
+#' 
+#' median centre normalisation:
+#' data distributions are adjusted such that each individual sample's medians are aligned to the average of medians of all the samples 
 #'
-#' You can learn more about package authoring with RStudio at:
+#'   
 #'
-#'   http://r-pkgs.had.co.nz/
-#'
-#' Some useful keyboard shortcuts for package authoring:
-#'
-#'   Build and Reload Package:  'Ctrl + Shift + B'
-#'   Check Package:             'Ctrl + Shift + E'
-#'   Test Package:              'Ctrl + Shift + T'
+#' 
+
 
 mediancentre <- function(ProteinQuant){
   library(dplyr)
