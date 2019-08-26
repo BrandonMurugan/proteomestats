@@ -10,19 +10,19 @@
 #' 
 
 
-mediancentre <- function(ProteinQuant){
+mediancentre <- function(x){
   library(dplyr)
   library(splitstackshape)
   library("miscTools")
   library(preprocessCore)
-  ProteinQuant[ProteinQuant == 0] <- NA
-  ProteinQuant.norm <- ProteinQuant[,-1]
+  X[x == 0] <- NA
+  ProteinQuant.norm <- x[,-1]
   ColumnMedians <- colMedians(ProteinQuant.norm, na.rm = T)
   ColumnMedians <- as.data.frame(ColumnMedians)
   meanMeans <- colMeans(ColumnMedians)
   normFactor <- meanMeans/ColumnMedians
   normFactor <- t(normFactor)
   ProteinQuant.norm <- data.frame(mapply("*", ProteinQuant.norm, normFactor))
-  ProteinQuant.norm <- cbind(Protein.ID = ProteinQuant[,1], ProteinQuant.norm)
+  ProteinQuant.norm <- cbind(Protein.ID = x[,1], ProteinQuant.norm)
   return(ProteinQuant.norm)
 }
