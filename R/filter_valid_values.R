@@ -36,8 +36,8 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
     colnames(temporary) <- "NA"
     for (j in experimental.groups){
       # if ((sum(input.df[i,grep(pattern = j, x = colnames(input.df))] != 0) > (valid.values-1))) {
-      if (sum(is.na(input.df[i,grep(pattern = j, x = colnames(input.df)[-1])])) <= (length(input.df[i,grep(pattern = j, x = colnames(input.df)[-1])]) - valid.values)) {
-        temporary <- cbind(temporary,input.df[i,grep(pattern = j, x = colnames(input.df)[-1])])}
+      if (sum(is.na(input.df[i,grep(pattern = j, x = colnames(input.df))])) <= (length(input.df[i,grep(pattern = j, x = colnames(input.df))]) - valid.values)) {
+        temporary <- cbind(temporary,input.df[i,grep(pattern = j, x = colnames(input.df))])}
     }
     if (dim(temporary)[2] == dim(input.df)[2]){
       temporary <- cbind(IDname=input.df[i,1], temporary)
