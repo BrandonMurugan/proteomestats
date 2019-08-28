@@ -21,7 +21,7 @@
 filter_valid_values <- function(input.df, experimental.groups, valid.values = 2, zero.as.na=T){
 
   require(dplyr)
-  require("miscTools")
+  require(miscTools)
   require(reshape2)
   require(tidyr)
 
@@ -42,7 +42,7 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
     if (dim(temporary)[2] == dim(input.df)[2]){
       temporary <- cbind(IDname=input.df[i,1], temporary)
       colnames(temporary)[1] <- colnames(input.df)[1]
-      temporary <- temporary[names(test2)]
+      temporary <- temporary[colnames(test2)]
       test2 <- rbind(test2,temporary)
     }
   }
