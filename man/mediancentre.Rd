@@ -2,22 +2,14 @@
 % Please edit documentation in R/mediancentre.R
 \name{mediancentre}
 \alias{mediancentre}
-\title{Hello, world!}
+\title{Mediancentre function}
 \usage{
-mediancentre(x = ProteinQuant)
+mediancentre(x)
 }
 \description{
-This is an example function named 'hello'
-which prints 'Hello, world!'.
+This function reads in a dataframe with protein ID column as the 1st column
 }
 \details{
-You can learn more about package authoring with RStudio at:
-
-http://r-pkgs.had.co.nz/
-
-Some useful keyboard shortcuts for package authoring:
-
-Build and Reload Package:  'Ctrl + Shift + B'
-  Check Package:             'Ctrl + Shift + E'
-  Test Package:              'Ctrl + Shift + T'
+median centre normalisation:
+data distributions are adjusted such that each individual sample's medians are aligned to the average of medians of all the samples
 }

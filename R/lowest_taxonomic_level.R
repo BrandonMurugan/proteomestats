@@ -44,4 +44,5 @@ lowest.tax.level <- function(phyloseq.file){
 
   phyloseq.file@tax_table@.Data <- DescTools::Rev(phyloseq.file@tax_table@.Data, margin = 2)
   phyloseq.file@tax_table@.Data <- cbind(phyloseq.file@tax_table@.Data, lowest_tax_level=tax_fin)
+
 }
