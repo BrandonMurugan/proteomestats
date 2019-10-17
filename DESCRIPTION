@@ -14,4 +14,7 @@ Imports:
     reshape2,
     tidyr,
     dplyr,
-    splitstackshape
+    splitstackshape,
+    phyloseq,
+    stringr,
+    DescTools
