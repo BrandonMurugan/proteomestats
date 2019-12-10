@@ -1,4 +1,4 @@
-#' Valid value filter for label-free proteomic LC-MS experiments
+#' Valid value filter for label-free proteomic LC-MS experiments \vec{x}
 #'
 #' This function takes a file with protein names 1st column) and quantitation columns, and applies a user defined valid value filter with per-group constraints.
 #' The filter will assess each group for the minimum number of valid values, and return the rows where this filter passes in \bold{all} groups
@@ -39,7 +39,7 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
       if (sum(is.na(input.df[i,grep(pattern = j, x = colnames(input.df))])) <= (length(input.df[i,grep(pattern = j, x = colnames(input.df))]) - valid.values)) {
         temporary <- cbind(temporary,input.df[i,grep(pattern = j, x = colnames(input.df))])}
     }
-    if ((dim(temporary)[2]-1) == dim(input.df)[2]){
+    if (dim(temporary)[2] == dim(input.df)[2]){
       temporary <- cbind(IDname=input.df[i,1], temporary)
       colnames(temporary)[1] <- colnames(input.df)[1]
       temporary <- temporary[colnames(test2)]

@@ -19,7 +19,7 @@ filter_valid_values(input.df, experimental.groups, valid.values = 2,
 \description{
 This function takes a file with protein names 1st column) and quantitation columns, and applies a user defined valid value filter with per-group constraints.
 The filter will assess each group for the minimum number of valid values, and return the rows where this filter passes in \bold{all} groups
-The output file is the expression matrix with rows that do \bold{not} pass the filter removed
+The output file is the expression matrix with rows that do \bold{not} \vec{x} pass the filter removed
 }
 \author{
 Brandon D. Murugan
