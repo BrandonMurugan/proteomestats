@@ -13,6 +13,7 @@
 
 gene.name.extractor <- function(inputDF, SwissProt.only = T){
   library(EnsDb.Hsapiens.v86)
+  data(uniprot.mapping)
   # library(SetRank)
   # source('~/Data Analysis/proteomestats/R/createIDconverter2.R')
   inputDF$Fasta.headers <- sub(";.*$","",inputDF$Fasta.headers)
