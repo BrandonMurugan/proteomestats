@@ -48,5 +48,8 @@ gene.name.extractor <- function(inputDF, SwissProt.only = T){
   inputDF_2$uniprot <- sub("^(tr|sp)\\|","",inputDF_2$Fasta.headers)
   inputDF_2$uniprot <- sub("\\|.*$","",inputDF_2$uniprot)
   if (!is.null(inputDF_2$id)) inputDF_2$id <- as.numeric(inputDF_2$id)
+
+  inputDF_2 <- dplyr::left_join(inputDF_2, uniprot.mapping, "Gene.names")
+  colnames(inputDF_2)[colnames(inputDF_2)=="Entry"] <- "UniProt_sp"
   return(inputDF_2)
 }
