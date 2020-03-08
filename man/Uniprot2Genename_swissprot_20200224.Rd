@@ -15,10 +15,4 @@ data(uniprot.mapping)
 UniProt Human Reference proteome filtered for SwissProt entries only (Reviewed)
 Data extracted on 24 Feb 2020
 }
-\examples{
-data(grav)
-times <- attr(grav, "time")
-phe <- grav$pheno
-\donttest{iplotCurves(phe, times)}
-}
 \keyword{uniprot}

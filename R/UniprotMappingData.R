@@ -14,8 +14,4 @@
 #' @source \href{https://www.uniprot.org}{UniProtKB}
 #'
 #' @examples
-#' data(grav)
-#' times <- attr(grav, "time")
-#' phe <- grav$pheno
-#' \donttest{iplotCurves(phe, times)}
 "Uniprot2Genename_swissprot_20200224"
