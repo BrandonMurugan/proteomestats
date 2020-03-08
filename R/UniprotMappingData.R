@@ -5,7 +5,7 @@
 #'
 #' @docType data
 #'
-#' @usage data(uniprot.mapping)
+#' @usage data(Uniprot2Genename_swissprot_20200224)
 #'
 #' @format An object of class \code{"cross"}; see \code{\link[qtl]{read.cross}}.
 #'

@@ -9,7 +9,7 @@
 \href{https://www.uniprot.org}{UniProtKB}
 }
 \usage{
-data(uniprot.mapping)
+data(Uniprot2Genename_swissprot_20200224)
 }
 \description{
 UniProt Human Reference proteome filtered for SwissProt entries only (Reviewed)
