@@ -18,4 +18,5 @@ Imports:
     phyloseq,
     stringr,
     DescTools,
-    EnsDb.Hsapiens.v86
+    EnsDb.Hsapiens.v86,
+    AnnotationDbi
