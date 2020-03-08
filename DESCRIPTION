@@ -17,4 +17,5 @@ Imports:
     splitstackshape,
     phyloseq,
     stringr,
-    DescTools
+    DescTools,
+    EnsDb.Hsapiens.v86
