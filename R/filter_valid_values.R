@@ -8,6 +8,7 @@
 #' @param input.df Input dataframe. Must have one column with protein/gene identifier and rest of columns with expression values for all samples
 #' @param experimental.groups List of experimental groups with replicate suffix excluded (e.g.: c("Control", "Treatment"), \bold{not} c("Control_1", "Control_2", etc). This list must match at least part of the intensity column names in the expression matrix)
 #' @param valid.values Number of valid values to filter for per-group
+#' @param ID.columns Number of ID columns. Will assume the 1st n columns (Default = 1)
 #' @param zero.as.na Returns dataframe with zeros converted to NAs (Default = T)
 #'
 #'
@@ -18,7 +19,7 @@
 # valid.values <- 2
 # experimental.groups <- experiments2$experiments
 
-filter_valid_values <- function(input.df, experimental.groups, valid.values = 2, zero.as.na=T){
+filter_valid_values <- function(input.df, experimental.groups, valid.values = 2, ID.columns = 1, zero.as.na=T){
 
   require(dplyr)
   require(miscTools)
@@ -39,9 +40,9 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
       if (sum(is.na(input.df[i,grep(pattern = j, x = colnames(input.df))])) <= (length(input.df[i,grep(pattern = j, x = colnames(input.df))]) - valid.values)) {
         temporary <- cbind(temporary,input.df[i,grep(pattern = j, x = colnames(input.df))])}
     }
-    if ((dim(temporary)[2]-1) == dim(input.df)[2]){
-      temporary <- cbind(IDname=input.df[i,1], temporary)
-      colnames(temporary)[1] <- colnames(input.df)[1]
+    if ((dim(temporary)[2]-1) == dim(input.df)[2]-(ID.columns+1)){
+      temporary <- cbind(IDname=input.df[i,1:ID.columns], temporary)
+      colnames(temporary)[1:ID.columns] <- colnames(input.df)[1:ID.columns]
       temporary <- temporary[colnames(test2)]
       test2 <- rbind(test2,temporary)
     }

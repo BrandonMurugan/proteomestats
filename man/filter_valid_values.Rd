@@ -19,6 +19,8 @@ filter_valid_values(input.df, experimental.groups, valid.values = 2,
 
 \item{zero.as.na}{Returns dataframe with zeros converted to NAs (Default = T)}
 
+\item{ID.columns}{Number of ID columns. Will assume the 1st n columns (Default = 1)}
+
 \item{input.df}{Input dataframe. Must have one column with protein/gene identifier and rest of columns with expression values for all samples}
 
 \item{experimental.groups}{List of experimental groups with replicate suffix excluded (e.g.: c("Control", "Treatment"), \bold{not} c("Control_1", "Control_2", etc). This list must match at least part of the intensity column names in the expression matrix)}
