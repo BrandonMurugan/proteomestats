@@ -40,7 +40,7 @@ filter_valid_values <- function(input.df, experimental.groups, valid.values = 2,
       if (sum(is.na(input.df[i,grep(pattern = j, x = colnames(input.df))])) <= (length(input.df[i,grep(pattern = j, x = colnames(input.df))]) - valid.values)) {
         temporary <- cbind(temporary,input.df[i,grep(pattern = j, x = colnames(input.df))])}
     }
-    if ((dim(temporary)[2]-1) == dim(input.df)[2]-(ID.columns+1)){
+    if ((dim(temporary)[2]-1) == dim(input.df)[2]-(ID.columns)){
       temporary <- cbind(IDname=input.df[i,1:ID.columns], temporary)
       colnames(temporary)[1:ID.columns] <- colnames(input.df)[1:ID.columns]
       temporary <- temporary[colnames(test2)]
