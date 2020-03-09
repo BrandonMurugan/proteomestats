@@ -15,4 +15,7 @@ data(Uniprot2Genename_swissprot_20200224)
 UniProt Human Reference proteome filtered for SwissProt entries only (Reviewed)
 Data extracted on 24 Feb 2020
 }
+\examples{
+None
+}
 \keyword{uniprot}

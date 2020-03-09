@@ -13,5 +13,5 @@
 #'
 #' @source \href{https://www.uniprot.org}{UniProtKB}
 #'
-#' @examples
+#' @examples None
 "Uniprot2Genename_swissprot_20200224"
