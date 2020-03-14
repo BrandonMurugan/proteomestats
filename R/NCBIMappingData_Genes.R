@@ -1,12 +1,11 @@
-#' NCBI Human mapping file
+#' NCBI Human mapping file - Genes
 #'
-#' RefSeq data for human genome (GRCh38.p13)
-#' Genome Reference Consortium (March 2019)
-#' Data extracted on 13 March 2020
+#' NCBI Genes
+#' Data extracted on 10 Feb 2020
 #'
 #' @docType data
 #'
-#' @usage data(NCBI_200313)
+#' @usage data(NCBI_genes_200210)
 #'
 #' @format An object of class \code{"cross"}; see \code{\link[qtl]{read.cross}}.
 #'
@@ -15,4 +14,4 @@
 #' @source \href{https://www.ncbi.nlm.nih.gov/gene}{NCBI}
 #'
 #' @examples None
-"NCBI_200313"
+"NCBI_genes_200210"
