@@ -14,9 +14,9 @@
 gene.name.extractor <- function(inputDF, SwissProt.only = T){
   # library(EnsDb.Hsapiens.v86)
   library(proteomestats)
-  data(Uniprot2Genename_swissprot_20200313)
+  data("Uniprot2Genename_swissprot_20200313")
   # data(NCBI_assembly_200313)
-  data(NCBI_genes_200210)
+  data("NCBI_genes_200210_unique")
   # library(SetRank)
   # source('~/Data Analysis/proteomestats/R/createIDconverter2.R')
   inputDF <- sp.select(input.df = inputDF, ProteinID.column = "Fasta.headers", new.ID.column = "Protein.ID_spFilter", delimiter = ";")
