@@ -57,8 +57,6 @@ gene.name.extractor <- function(inputDF, SwissProt.only = T){
   inputDF_2[grep("^$",inputDF_2$Gene.names),"Gene.names"] <- inputDF_2[grep("^$",inputDF_2$Gene.names),"uniprot"]
   inputDF_2[grep("^$",inputDF_2$Gene.names),"GeneName_MQ"] <- inputDF_2[grep("^$",inputDF_2$Gene.names),"uniprot"]
 
-  inputDF_2 <- dplyr::left_join(inputDF_2, Uniprot2Genename_swissprot_20200313[,c("Gene.names","Entry")], "Gene.names")
-
   # Adding reviewed uniprot IDs from genenames
   inputDF_2 <- dplyr::left_join(inputDF_2, Uniprot2Genename_swissprot_20200313[,c("Gene.names","Entry")], "Gene.names")
   inputDF_2$Entry <- as.character(inputDF_2$Entry)
