@@ -26,6 +26,8 @@ sp.select <- function(input.df, ProteinID.column, new.ID.column = "ProteinID_mai
     temp <- grep("sp\\|", unlist(stringr::str_split(input.df[i,grep(paste0("^",ProteinID.column,"$"), colnames(input.df))], delimiter)))
     if (length(temp) == 0)
       temp <- 1
+    if (grepl("Uncharacterized", unlist(stringr::str_split(input.df[i,grep(paste0("^",ProteinID.column,"$"), colnames(input.df))], delimiter))[temp]))
+      temp <- temp+1
     if (length(temp) != 0)
       temp <- temp[1]
     input.df[i,new.ID.column] <- unlist(stringr::str_split(input.df[i,grep(paste0("^Protein.IDs$"), colnames(input.df))], delimiter))[temp]
