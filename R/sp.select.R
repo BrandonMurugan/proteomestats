@@ -22,19 +22,13 @@
 sp.select <- function(input.df, ProteinID.column, new.ID.column = "ProteinID_main", delimiter){
   library(splitstackshape)
   library(dplyr)
-  sp_proteins <- data.frame(sp_proteins=substring(input.df[,grep(paste0("^",ProteinID.column,"$"), colnames(input.df))],regexpr("sp\\|", input.df[,grep(paste0("^",ProteinID.column,"$"), colnames(input.df))])))
-
-  sp_proteins <- data.frame(cSplit(indt = sp_proteins, splitCols = "sp_proteins", sep = delimiter))
-  # sp_proteins <- sp_proteins[,1:grep("sp_proteins_01", colnames(sp_proteins))]
-  sp_proteins <- sp_proteins[,1]
-  # colnames(sp_proteins) <- "sp_proteins"
-  names(sp_proteins) <- "sp_proteins"
-  sp_proteins <- data.frame(sp_proteins)
-  sp_proteins$sp_proteins <- as.character(sp_proteins$sp_proteins)
-  # colnames(sp_proteins) <- new.ID.column
-  names(sp_proteins) <- new.ID.column
-  sp_proteins <- data.frame(sp_proteins)
-  input.df <- cbind(sp_proteins, input.df, deparse.level = 1)
-  input.df <- data.frame(input.df)
+  for (i in rownames(input.df)){
+    temp <- grep("sp\\|", unlist(stringr::str_split(input.df[i,grep(paste0("^",ProteinID.column,"$"), colnames(input.df))], delimiter)))
+    if (length(temp) == 0)
+      temp <- 1
+    if (length(temp) != 0)
+      temp <- temp[1]
+    input.df[i,new.ID.column] <- unlist(stringr::str_split(input.df[i,grep(paste0("^Protein.IDs$"), colnames(input.df))], delimiter))[temp]
+  }
   return(input.df)
 }
