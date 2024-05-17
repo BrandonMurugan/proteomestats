@@ -4,7 +4,9 @@
 \name{NCBI_assembly_200313}
 \alias{NCBI_assembly_200313}
 \title{NCBI Human mapping file - Assembly}
-\format{An object of class \code{"cross"}; see \code{\link[qtl]{read.cross}}.}
+\format{
+An object of class \code{"cross"}; see \code{\link[qtl]{read.cross}}.
+}
 \source{
 \href{https://www.ncbi.nlm.nih.gov/gene}{NCBI}
 }

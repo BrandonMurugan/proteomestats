@@ -4,8 +4,12 @@
 \alias{filter_valid_values_test}
 \title{Valid value filter for label-free proteomic LC-MS experiments \vec{x}}
 \usage{
-filter_valid_values_test(input.df, experimental.groups, valid.values = 2,
-  zero.as.na = T)
+filter_valid_values_test(
+  input.df,
+  experimental.groups,
+  valid.values = 2,
+  zero.as.na = T
+)
 }
 \arguments{
 \item{input.df}{Input dataframe. Must have one column with protein/gene identifier and rest of columns with expression values for all samples}

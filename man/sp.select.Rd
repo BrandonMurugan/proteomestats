@@ -4,8 +4,12 @@
 \alias{sp.select}
 \title{Protein ID Filter}
 \usage{
-sp.select(input.df, ProteinID.column, new.ID.column = "ProteinID_main",
-  delimiter)
+sp.select(
+  input.df,
+  ProteinID.column,
+  new.ID.column = "ProteinID_main",
+  delimiter
+)
 }
 \arguments{
 \item{ProteinID.column}{Protein ID column to be filtered through to find 1st instance of an \bold{sp} identifier (string)}

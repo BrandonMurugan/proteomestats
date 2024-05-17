@@ -4,7 +4,9 @@
 \name{Uniprot2Genename_swissprot_20200313}
 \alias{Uniprot2Genename_swissprot_20200313}
 \title{UniProt Human GeneName to UniProtKB mapping file}
-\format{An object of class \code{"cross"}; see \code{\link[qtl]{read.cross}}.}
+\format{
+An object of class \code{"cross"}; see \code{\link[qtl]{read.cross}}.
+}
 \source{
 \href{https://www.uniprot.org}{UniProtKB}
 }

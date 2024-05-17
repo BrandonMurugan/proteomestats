@@ -4,7 +4,9 @@
 \name{NCBI_genes_200210}
 \alias{NCBI_genes_200210}
 \title{NCBI Human mapping file - Genes}
-\format{An object of class \code{"cross"}; see \code{\link[qtl]{read.cross}}.}
+\format{
+An object of class \code{"cross"}; see \code{\link[qtl]{read.cross}}.
+}
 \source{
 \href{https://www.ncbi.nlm.nih.gov/gene}{NCBI}
 }
